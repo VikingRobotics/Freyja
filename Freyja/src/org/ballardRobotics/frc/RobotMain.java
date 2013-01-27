@@ -56,6 +56,8 @@ public class RobotMain extends IterativeRobot {
      */
     public void teleopPeriodic() {
         drive.arcadeDrive(joy1.getY(), joy1.getTwist());
+        
+        //roller control
         if(rollOut.isPressed && !rollIn.isPressed){
             pickup.set(1);
         }else if(!rollOut.isPressed && rollIn.isPressed){
@@ -63,6 +65,7 @@ public class RobotMain extends IterativeRobot {
         }else{
             pickup.set(0);
         }
+        //end roller control
         
     }
     
